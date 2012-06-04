@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Apparcando</string>
+    <string name="im_looking">Buscando aparcamiento</string>
+    <string name="i_park">Aparco</string>
+    <string name="i_leave">Salgo</string>
+</resources>
