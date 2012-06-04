@@ -1,27 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-              android:gravity="center_horizontal|center">
-    <RadioGroup android:id="@+id/parking_status"
-                android:layout_height="fill_parent"
-                android:layout_width="wrap_content">
-        <ToggleButton android:id="@+id/im_looking"
-                      android:textOff="@string/im_looking"
-                      android:textOn="@string/im_looking"
-                      android:layout_height="wrap_content"
-                      android:layout_width="fill_parent"
-                      android:onClick="imLookingToggle"/>
-        <Button android:id="@+id/i_park"
-                android:text="@string/i_park"
-                android:layout_height="wrap_content"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="fill_parent"
-                android:onClick="iParkClick"/>
-        <Button android:id="@+id/i_leave"
-                android:text="@string/i_leave"
-                android:layout_height="wrap_content"
-                android:layout_width="fill_parent"
-                android:onClick="iLeaveClick"/>
-    </RadioGroup>
-</LinearLayout>
+                android:layout_height="fill_parent">
+    <com.google.android.maps.MapView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/mapview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true"
+            android:apiKey="0DArXfmbJ_1L6SgokVuoHLHPUA44dS65u6lmHCg"/>
+    <RelativeLayout android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_group"
+                    android:layout_below="@+id/mapview"
+                    android:layout_alignParentTop="true">
+        <RadioGroup android:id="@+id/parking_status"
+                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:orientation="horizontal">
+            <ToggleButton android:id="@+id/im_looking"
+                          android:textOff="@string/im_looking"
+                          android:textOn="@string/im_looking"
+                          android:layout_height="wrap_content"
+                          android:layout_width="wrap_content"/>
+            <Button android:id="@+id/i_park"
+                    android:text="@string/i_park"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:onClick="iParkClick"/>
+            <Button android:id="@+id/i_leave"
+                    android:text="@string/i_leave"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:onClick="iLeaveClick"/>
+        </RadioGroup>
+    </RelativeLayout>
+</RelativeLayout>
